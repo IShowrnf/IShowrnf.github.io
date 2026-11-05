@@ -1,0 +1,165 @@
+/* NullClient launcher — shared layout on top of the theme palettes. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+	background:
+		radial-gradient(1200px 700px at 15% -10%, var(--bg-glow1), transparent 60%),
+		radial-gradient(900px 600px at 110% 20%, var(--bg-glow2), transparent 55%),
+		var(--bg);
+	color: var(--text);
+	min-height: 100vh;
+}
+
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 22px; }
+
+a { color: var(--accent); }
+
+/* ---------------- header ---------------- */
+.site-head {
+	position: sticky; top: 0; z-index: 20;
+	background: color-mix(in srgb, var(--bg) 72%, transparent);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid var(--panel-border);
+}
+.site-head .wrap {
+	display: flex; align-items: center; justify-content: space-between;
+	height: 60px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.4px; }
+.brand .mark {
+	width: 30px; height: 30px; border-radius: 9px;
+	background: var(--accent-soft);
+	display: grid; place-items: center;
+	border: 1px solid var(--panel-border);
+}
+.brand small { color: var(--text-faint); font-weight: 500; }
+
+/* theme buttons */
+.theme-switch { display: flex; gap: 8px; }
+.theme-switch button {
+	border: 1px solid var(--panel-border);
+	background: var(--chip-bg);
+	color: var(--text-dim);
+	padding: 7px 13px;
+	border-radius: 999px;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+.theme-switch button:hover { color: var(--text); border-color: var(--accent-soft); }
+.theme-switch button.active {
+	color: var(--btn-primary-text);
+	background: var(--btn-primary-bg);
+	border-color: transparent;
+	font-weight: 600;
+}
+
+/* ---------------- hero ---------------- */
+.hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: center; padding: 64px 0 40px; }
+.hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.08; letter-spacing: -0.5px; }
+.hero h1 .ache { color: var(--accent); }
+.hero p.lead { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; max-width: 52ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn {
+	display: inline-flex; align-items: center; gap: 9px;
+	padding: 13px 20px; border-radius: 14px;
+	font-size: 15px; font-weight: 650; text-decoration: none;
+	border: 1px solid transparent;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.btn.primary { background: var(--btn-primary-bg); color: var(--btn-primary-text); box-shadow: var(--panel-shadow); }
+.btn.ghost { background: var(--btn-ghost-bg); color: var(--btn-ghost-text); border-color: var(--panel-border); }
+.fineprint { margin-top: 14px; color: var(--text-faint); font-size: 12.5px; }
+
+/* mascot block */
+.mascot {
+	display: grid; place-items: center; text-align: center;
+	padding: 22px;
+	border-radius: 24px;
+	background: var(--panel);
+	border: 1px solid var(--panel-border);
+	box-shadow: var(--panel-shadow);
+	position: relative;
+	overflow: hidden;
+}
+.mascot .mascot-img { width: 100%; max-width: 300px; border-radius: 18px; display: none; }
+.mascot .uwu { font-size: clamp(40px, 6vw, 60px); line-height: 1.2; }
+.mascot .uwu-cap { margin-top: 10px; color: var(--text-dim); font-size: 14px; }
+.mascot .rune { position: absolute; color: var(--accent); opacity: 0.35; font-size: 22px; animation: float 4s ease-in-out infinite; }
+.mascot .rune:nth-child(2) { top: 12%; left: 8%; }
+.mascot .rune:nth-child(3) { top: 20%; right: 10%; animation-delay: 1.2s; }
+.mascot .rune:nth-child(4) { bottom: 14%; left: 14%; animation-delay: 2.1s; font-size: 16px; }
+.mascot .rune:nth-child(5) { bottom: 22%; right: 8%; animation-delay: 0.6s; font-size: 28px; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+/* ---------------- sections ---------------- */
+section.block { padding: 34px 0; }
+section.block h2 { font-size: 22px; margin-bottom: 6px; }
+section.block .sub { color: var(--text-dim); margin-bottom: 20px; font-size: 14.5px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.card {
+	background: var(--panel);
+	border: 1px solid var(--panel-border);
+	border-radius: 18px;
+	padding: 18px;
+	box-shadow: var(--panel-shadow);
+}
+.card .ico { font-size: 24px; }
+.card h3 { margin-top: 10px; font-size: 15.5px; }
+.card p { margin-top: 6px; color: var(--text-dim); font-size: 13.5px; line-height: 1.5; }
+
+/* theme picker cards */
+.theme-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.theme-card {
+	text-align: left; cursor: pointer;
+	border-radius: 18px; border: 2px solid var(--panel-border);
+	background: var(--panel); padding: 0; overflow: hidden;
+	transition: transform 0.15s ease, border-color 0.15s ease;
+	font: inherit; color: inherit;
+}
+.theme-card:hover { transform: translateY(-3px); }
+.theme-card .swatch { height: 92px; }
+.theme-card[data-head-to="femboy"] .swatch {
+	background: linear-gradient(135deg, #ffd0e8, #ffe9f3 60%, #ffc3e2);
+}
+.theme-card[data-head-to="steel"] .swatch {
+	background: linear-gradient(135deg, #0d1015, #1a2029 60%, #0b0d12);
+}
+.theme-card .info { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
+.theme-card .info b { font-size: 15px; }
+.theme-card .info span { color: var(--text-faint); font-size: 12.5px; margin-top: 3px; }
+.theme-card.active { border-color: var(--accent); }
+.theme-card .tick { color: var(--accent); opacity: 0; font-size: 18px; }
+.theme-card.active .tick { opacity: 1; }
+
+/* faq */
+.faq details {
+	background: var(--panel);
+	border: 1px solid var(--panel-border);
+	border-radius: 14px;
+	padding: 14px 18px; margin-bottom: 10px;
+	box-shadow: var(--panel-shadow);
+}
+.faq summary { cursor: pointer; font-weight: 600; font-size: 14.5px; }
+.faq p { margin-top: 10px; color: var(--text-dim); font-size: 13.5px; line-height: 1.55; }
+
+/* footer */
+footer { border-top: 1px solid var(--panel-border); margin-top: 30px; padding: 22px 0 34px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--text-faint); font-size: 12.5px; }
+
+/* steel theme helmet is drawn as svg in markup; hide the uwu face there */
+:root[data-theme="steel"] .uwu,
+:root[data-theme="steel"] .uwu-cap { display: none; }
+:root[data-theme="steel"] .rune { content: ""; }
+:root[data-theme="steel"] .mascot { text-align: center; }
+
+@media (max-width: 800px) {
+	.hero { grid-template-columns: 1fr; padding-top: 40px; }
+	.mascot { order: -1; }
+}
