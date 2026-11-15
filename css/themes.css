@@ -1,27 +1,5 @@
-/* NullClient launcher - theme palettes.
-   Switch by setting data-theme on <html> (js/theme.js persists the choice). */
-
-/* ---------- ✿ theme: femboy (cute pink) ✿ ---------- */
-:root[data-theme="femboy"] {
-	--bg: #ffe4f1;
-	--bg-glow1: #ffd0e8;
-	--bg-glow2: #fff0f7;
-	--panel: rgba(255, 255, 255, 0.85);
-	--panel-border: rgba(255, 143, 191, 0.4);
-	--panel-shadow: 0 10px 30px rgba(255, 122, 178, 0.18);
-	--text: #57243f;
-	--text-dim: #a15f80;
-	--text-faint: #c98aa8;
-	--accent: #ff6fae;
-	--accent-strong: #ff4f9a;
-	--accent-soft: rgba(255, 111, 174, 0.14);
-	--btn-primary-bg: linear-gradient(135deg, #ff8fc0, #ff5f9e);
-	--btn-primary-text: #ffffff;
-	--btn-ghost-bg: rgba(255, 255, 255, 0.9);
-	--btn-ghost-text: #d94f8e;
-	--chip-bg: rgba(255, 255, 255, 0.7);
-	--rune: "✿";
-}
+/* NullClient launcher - theme palette.
+   Set on <html> as data-theme="steel" (js/theme.js keeps any legacy key pointing here). */
 
 /* ---------- ▣ theme: steel (dark glass, no gold) ---------- */
 :root[data-theme="steel"] {

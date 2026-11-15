@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="femboy">
+<html lang="en" data-theme="steel">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NullClient — aether 1.12, in your browser</title>
 <meta name="description" content="Play NullClient (EaglercraftX 1.12 · Aether edition) right in your browser — no download, no install — or take the offline build with you.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='1em' font-size='90'%3E%F0%9F%92%96%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='1em' font-size='90'%3E%E2%96%A3%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/themes.css">
 <link rel="stylesheet" href="css/site.css">
 <script src="js/theme.js" defer></script>
@@ -16,7 +16,6 @@
 	<div class="wrap">
 		<div class="brand">
 			<span class="mark">
-				<!-- steel: helmet · femboy: heart -->
 				<svg class="mark-helm" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round">
 					<path d="M4 14a8 8 0 0 1 16 0v3h-3.4l-.6-2H8l-.6 2H4z"/>
 					<path d="M12 3v4" stroke-linecap="round"/>
@@ -24,10 +23,6 @@
 			</span>
 			<span>NullClient <small>· aether 1.12</small></span>
 		</div>
-		<nav class="theme-switch" aria-label="site theme">
-			<button data-head-to="femboy">✿ femboy</button>
-			<button data-head-to="steel">▣ steel</button>
-		</nav>
 	</div>
 </header>
 
@@ -36,17 +31,17 @@
 	<!-- hero -->
 	<section class="hero">
 		<div>
-			<h1>your world,<br>one tab away <span class="ache">♡</span></h1>
+			<h1>your world,<br>one tab away</h1>
 			<p class="lead">NullClient is EaglercraftX 1.12 tuned into one build — styled GUI, quality-of-life
 				modules, and everything running 100% in your browser. no install, no java, no account.</p>
 			<div class="cta">
 				<a class="btn primary" href="play/">▶&nbsp; play online — no download</a>
-				<a class="btn ghost" href="game/aether.html" download="NullClient_Offline.html">⬇&nbsp; download for pc</a>
+				<a class="btn ghost" href="https://github.com/IShowrnf/IShowrnf.github.io/releases/download/offline-v11500/Aether_1.12.2_Offline.html">⬇&nbsp; download for pc</a>
 			</div>
 			<p class="fineprint">play now saves live in your browser · the download is the same build as a single file you can double-click offline</p>
 		</div>
 		<div class="mascot" aria-hidden="true">
-			<span class="rune">✿</span><span class="rune">♡</span><span class="rune">✧</span><span class="rune">✿</span>
+			<span class="rune">▣</span><span class="rune">◈</span><span class="rune">✧</span><span class="rune">▣</span>
 			<!-- drop assets/img/mascot.png and it takes over automatically -->
 			<img class="mascot-img" src="assets/img/mascot.png" alt="" onerror="this.remove()">
 			<div class="uwu">( ᐡ ･ω･ ᐡ )</div>
@@ -68,13 +63,13 @@
 			<div class="card">
 				<div class="ico">⬇</div>
 				<h3>download for pc</h3>
-				<p>one 35&nbsp;MB html file. keep it, send it, double-click it — it runs offline forever, worlds and settings included.</p>
+				<p>one 60&nbsp;MB html file. keep it, send it, double-click it — it runs offline forever, worlds and settings included.</p>
 			</div>
 			<div class="card">
-				<div class="ico">✿</div>
-				<h3>pick a vibe</h3>
-				<p>the site comes in two themes — soft pink femboy and dark steel glass. your pick is remembered on
-					every page, including the player view.</p>
+				<div class="ico">▣</div>
+				<h3>skin catalog</h3>
+				<p>11,500+ skins baked right into the build — browse them in the client's main menu under <b>Skin
+					Catalog</b>, pick one, and it applies to your profile like a manual upload.</p>
 			</div>
 			<div class="card">
 				<div class="ico">⚡</div>
@@ -83,28 +78,6 @@
 					triggerbot, sprintreset and anchormacro ride along, and the keyless afk crew takes the boring shifts: autopickup vacuums your drops, autobreed + autoshear run the pen, autodrop drip-feeds the hopper, melonbot works the stems.</p>
 				<p>fresh in this build — <b>180 modules total</b>. a 50-piece modern pvp set, all keyless toggles straight from the gui: shield flicks, pearl bails, crit timing, rod taps, arrow dodges, chase + weaver movement, and the whole crew of quiet helpers that live in your bags. plus a 50-piece render &amp; optimization set headlined by <b>optiboost</b> — an optifine-style one-switch frame boost that applies every perf setting at once and hands them all back when you toggle off. zoom on C, and enough hud plates to read your whole game at a glance.</p>
 			</div>
-		</div>
-	</section>
-
-	<!-- theme picker -->
-	<section class="block" id="themes">
-		<h2>choose the look</h2>
-		<p class="sub">takes effect site-wide instantly. want a third vibe? css makes it a five-minute job.</p>
-		<div class="theme-cards">
-			<button class="theme-card" data-head-to="femboy" aria-pressed="true">
-				<div class="swatch"></div>
-				<div class="info">
-					<div><b>✿ femboy</b><br><span>soft pink, sparkles, floating hearts</span></div>
-					<div class="tick">✔</div>
-				</div>
-			</button>
-			<button class="theme-card" data-head-to="steel" aria-pressed="true">
-				<div class="swatch"></div>
-				<div class="info">
-					<div><b>▣ steel</b><br><span>black glass, silver trim, zero gold</span></div>
-					<div class="tick">✔</div>
-				</div>
-			</button>
 		</div>
 	</section>
 
@@ -125,7 +98,7 @@
 <footer>
 	<div class="wrap">
 		<span>NullClient · eaglercraftx 1.12 · aether edition</span>
-		<span>vibe powered by css <span class="ori">✿</span></span>
+		<span>vibe powered by css <span class="ori">▣</span></span>
 	</div>
 </footer>
 

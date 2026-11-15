@@ -6,21 +6,20 @@ Two ways to play, zero install:
 - **Play online (no download)** — boots the client in the browser (iframe wrapper + fullscreen button)
 - **Download for pc** — the same build as a single offline `.html` file
 
-Two themes, switchable site-wide (saved in the browser):
+One theme, everywhere:
 
 | theme | look |
 |---|---|
-| `✿ femboy` | soft pastel pink, sparkles, floating hearts, cute bubble mascot |
 | `▣ steel` | black glass, silver trim, code-drawn helmet — no gold |
 
 ## files that matter
 
 ```
-index.html      ← launcher page (theme picker, CTAs, faq)
+index.html      ← launcher page (CTAs, faq)
 play/index.html ← "playing now" page: themed top bar + fullscreen-iframed game
-game/aether.html← THE BUILD (NullClient offline html, ~35 MB)
-css/  themes.css (palettes) + site.css (layout)
-js/   theme.js   (theme switcher, localStorage)
+game/aether.html← THE BUILD loader (~1.5 KB; pulls game/classes.js + game/assets.epk)
+css/  themes.css (palette) + site.css (layout)
+js/   theme.js   (keeps the theme key on steel)
 assets/img/mascot.png ← optional; drop an image here and it replaces the bubble mascot automatically
 ```
 

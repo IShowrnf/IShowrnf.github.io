@@ -15,7 +15,8 @@
 	});
 	var saved = null;
 	try { saved = localStorage.getItem(KEY); } catch (err) { /* ignore */ }
-	code(saved || "femboy");
+	if (saved === "femboy") saved = null; // theme removed - move to steel
+	code(saved || "steel");
 	// remember changes
 	new MutationObserver(function () {
 		try { localStorage.setItem(KEY, document.documentElement.getAttribute("data-theme")); } catch (err) { /* ignore */ }

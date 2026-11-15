@@ -125,9 +125,6 @@ section.block .sub { color: var(--text-dim); margin-bottom: 20px; font-size: 14.
 }
 .theme-card:hover { transform: translateY(-3px); }
 .theme-card .swatch { height: 92px; }
-.theme-card[data-head-to="femboy"] .swatch {
-	background: linear-gradient(135deg, #ffd0e8, #ffe9f3 60%, #ffc3e2);
-}
 .theme-card[data-head-to="steel"] .swatch {
 	background: linear-gradient(135deg, #0d1015, #1a2029 60%, #0b0d12);
 }
