@@ -8,9 +8,13 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='1em' font-size='90'%3E%E2%96%A3%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/themes.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/effects.css">
 <script src="js/theme.js" defer></script>
+<script>document.documentElement.className += " xc-boot"; setTimeout(function () { document.documentElement.className = document.documentElement.className.replace(" xc-boot", ""); }, 1600);</script>
 </head>
 <body>
+
+<div class="xc-preloader" aria-hidden="true"><div class="xc-pre-mark">▣</div></div>
 
 <header class="site-head">
 	<div class="wrap">
@@ -49,6 +53,14 @@
 		</div>
 	</section>
 
+	<!-- 9 · feature ticker -->
+	<div class="xc-ticker" aria-hidden="true">
+		<div class="xc-ticker-row">
+			<span>AutoTotem</span><i>▣</i><span>OptiBoost</span><i>▣</i><span>AutoMace</span><i>▣</i><span>AnchorMacro</span><i>▣</i><span>Triggerbot</span><i>▣</i><span>WindPearl</span><i>▣</i><span>Skin Catalog</span><i>▣</i><span>AutoBreach</span><i>▣</i><span>PearlCatch</span><i>▣</i><span>BowCart</span><i>▣</i><span>MelonBot</span><i>▣</i><span>AutoPickup</span><i>▣</i><span>AutoBreed</span><i>▣</i><span>AutoShear</span><i>▣</i><span>AutoDrop</span><i>▣</i>
+			<span>AutoTotem</span><i>▣</i><span>OptiBoost</span><i>▣</i><span>AutoMace</span><i>▣</i><span>AnchorMacro</span><i>▣</i><span>Triggerbot</span><i>▣</i><span>WindPearl</span><i>▣</i><span>Skin Catalog</span><i>▣</i><span>AutoBreach</span><i>▣</i><span>PearlCatch</span><i>▣</i><span>BowCart</span><i>▣</i><span>MelonBot</span><i>▣</i><span>AutoPickup</span><i>▣</i><span>AutoBreed</span><i>▣</i><span>AutoShear</span><i>▣</i><span>AutoDrop</span><i>▣</i>
+		</div>
+	</div>
+
 	<!-- ways to play -->
 	<section class="block">
 		<h2>two ways to play</h2>
@@ -81,6 +93,17 @@
 		</div>
 	</section>
 
+	<!-- 4 · stats strip -->
+	<section class="block">
+		<h2>by the numbers</h2>
+		<div class="xc-stats">
+			<div class="stat"><b data-count="11500" data-suffix="+">0</b><span>skins in the catalog</span></div>
+			<div class="stat"><b data-count="180">0</b><span>modules in the gui</span></div>
+			<div class="stat"><b data-count="100" data-suffix="%">0</b><span>runs in your browser</span></div>
+			<div class="stat"><b>0</b><span>installs, ever</span></div>
+		</div>
+	</section>
+
 	<!-- faq -->
 	<section class="block faq">
 		<h2>quick answers</h2>
@@ -101,6 +124,8 @@
 		<span>vibe powered by css <span class="ori">▣</span></span>
 	</div>
 </footer>
+
+<script src="js/effects.js" defer></script>
 
 </body>
 </html>

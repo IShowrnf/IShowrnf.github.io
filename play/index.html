@@ -44,7 +44,7 @@
 		NullClient <span class="chip">· aether 1.12 · playing now ▣</span>
 	</div>
 	<span class="spacer"></span>
-	<span class="hint">world saves in this browser tab</span>
+	<span class="hint">keyboard goes to the game · world saves in this tab</span>
 	<button class="tbtn" id="fs">⛶ fullscreen</button>
 	<a class="tbtn" href="../">← back</a>
 </div>
@@ -60,6 +60,28 @@
 			frame.requestFullscreen();
 		}
 	});
+
+	/* keyboard routing: the game lives in an iframe, so every key only
+	   reaches it while THAT iframe holds browser focus - a fresh page load
+	   leaves focus on the wrapper instead, which is why keys "did nothing"
+	   (worst on the first-run username screen, where you must type).
+	   Focus the game the moment it loads and hand focus back after every
+	   event that would steal it: wrapper clicks, tab switches, fullscreen. */
+	function focusGame() {
+		try { frame.contentWindow.focus(); } catch (e) { /* not loaded yet */ }
+	}
+	frame.addEventListener("load", function () {
+		focusGame();
+		setTimeout(focusGame, 80);
+		setTimeout(focusGame, 700); // late game boot re-steals nothing anyway
+	});
+	document.addEventListener("click", function (e) {
+		// let links (the back button) navigate; everything else returns focus
+		if (e.target.closest && e.target.closest("a")) { return; }
+		setTimeout(focusGame, 0);
+	}, true);
+	window.addEventListener("focus", function () { setTimeout(focusGame, 0); });
+	document.addEventListener("fullscreenchange", function () { setTimeout(focusGame, 120); });
 </script>
 
 </body>
