@@ -82,6 +82,39 @@
 	}, true);
 	window.addEventListener("focus", function () { setTimeout(focusGame, 0); });
 	document.addEventListener("fullscreenchange", function () { setTimeout(focusGame, 120); });
+
+	/* belt + suspenders: if a key STILL lands on the wrapper instead of the
+	   game frame (some browsers handle programmatic iframe focus their own
+	   way), forward it into the game by hand. The browser delivers each
+	   key event to exactly one frame, so this only fires when the game did
+	   NOT already get the key - never a double input. */
+	function forwardKey(e, type) {
+		var win = null;
+		try { win = frame.contentWindow; } catch (err) { return; }
+		if (!win) { return; }
+		var evt;
+		try {
+			evt = new KeyboardEvent(type, {
+				key: e.key || "", code: e.code || "",
+				location: e.location || 0, repeat: !!e.repeat,
+				ctrlKey: e.ctrlKey, shiftKey: e.shiftKey,
+				altKey: e.altKey, metaKey: e.metaKey,
+				bubbles: false, cancelable: true
+			});
+		} catch (err2) { return; }
+		try {
+			// engines that zero keyCode/which on synthesized events get the
+			// real values shadowed on top
+			Object.defineProperty(evt, "keyCode", { get: function () { return e.keyCode; } });
+			Object.defineProperty(evt, "which", { get: function () { return e.which; } });
+		} catch (err3) { /* keep the event as-is */ }
+		try { win.dispatchEvent(evt); } catch (err4) { /* game not ready */ }
+		if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+			e.preventDefault(); // keep the wrapper page from scrolling/jumping
+		}
+	}
+	document.addEventListener("keydown", function (e) { forwardKey(e, "keydown"); });
+	document.addEventListener("keyup", function (e) { forwardKey(e, "keyup"); });
 </script>
 
 </body>
