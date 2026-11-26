@@ -46,15 +46,20 @@
 	</div>
 	<span class="spacer"></span>
 	<span class="hint">utility modules only · keyboard goes to the game · world saves in this tab</span>
-	<button class="tbtn" id="fs">⛶ fullscreen</button>
+	<button class="tbtn" id="bright" aria-pressed="false">☀ Fullbright: Off</button><button class="tbtn" id="fs">⛶ fullscreen</button>
 	
 	<a class="tbtn" href="../../">← back</a>
 </div>
 
-<iframe id="game" src="../../game/aether-v26.html" title="Aether Legit — Aether 1.12 Legit" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>
+<iframe id="game" src="../../game/aether-v26.html?v=27" title="Aether Legit — Aether 1.12 Legit" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>
 
 <script>
 	var frame = document.getElementById("game");
+var bright=document.getElementById("bright");
+function syncBright(){try{var on=frame.contentWindow.aetherFullbright===true;bright.textContent="☀ Fullbright: "+(on?"On":"Off");bright.setAttribute("aria-pressed",String(on));bright.classList.toggle("primary",on)}catch(e){}}
+bright.addEventListener("click",function(){try{if(typeof frame.contentWindow.aetherSetFullbright!=="function"){alert("Fullbright is available after v2.7 finishes loading.");return;}frame.contentWindow.aetherSetFullbright(!frame.contentWindow.aetherFullbright);syncBright();}catch(e){alert("Fullbright is not available in this game build.");}});
+setInterval(syncBright,500);
+
 	document.getElementById("fs").addEventListener("click", function () {
 		if (document.fullscreenElement) {
 			document.exitFullscreen();
